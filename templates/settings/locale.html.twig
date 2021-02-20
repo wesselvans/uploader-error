@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Email templates{% endblock %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+    <a class="btn btn-info" href="{{ path('settings.locale_new') }}">New template</a>
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+        {% if LocaleTemplates %}
+            <ul class="list-group wd-md-100p flex-column">
+            {% for localetemplate in LocaleTemplates %}
+                <li class="list-group-item py-2 d-flex">
+                    <a href="{{ path('settings.locale_edit', {'id': localetemplate.id}) }}" class="d-flex w-100 align-items-center">
+                        <div class="avatar avatar-md bg-warning rounded-circle mr-3">
+                            {{ localetemplate.name|first }}
+                        </div>
+                        <div>
+                            <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">{{ localetemplate.name }}</h6>
+                        </div>
+                        <span class="ml-auto">&nbsp;</span>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <div class="card mg-b-20 text-center">
+            <div class="card-body h-100">
+                <i class="far fa-question-circle tx-46"></i>
+                <h5 class="mg-b-10 mg-t-15 tx-18">Its Empty In Here</h5>
+            </div>
+        </div>
+        {% endif %}    
+        </div>
+    </div>
+</div>
+
+<div id="newtemplate" class="modal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">Add a new Email template</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn ripple btn-primary disabled" type="submit" id="submit-saveuser">{{ button_label|default('Save') }}</button>
+                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+

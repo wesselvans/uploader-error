@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Settings{% endblock %}
+{% block stylesheets %}{% endblock %}
+{% block body %}
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-horizontal">
+                <div class="mb-4 main-content-label">Moneybird</div>
+                <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">User Name</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="User Name" value="Redashna">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer ">
+            <div class="float-right"><a href="#" class="btn btn-success">Save Changes</a></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}{% endblock %}

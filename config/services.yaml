@@ -4,6 +4,13 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    doctrine_behaviors_blameable_user_entity: App\Entity\User
+    doctrine_behaviors_softdeletable_user_entity: App\Entity\User
+    app.path.pdf: /uploads/files
+    app.path.files: /uploads/files
+    absolute.path.pdf: '%kernel.project_dir%/public%env(PDFPATH)%'
+    send.email: 'noreply@wesselsservices.nl'
+    default.location: 3
 
 services:
     # default configuration for services in *this* file
